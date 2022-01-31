@@ -38,3 +38,8 @@ To test:
 - Start both frontend and backend application.
 - Open browser to http://localhost:8001
 - The instructions for the frontend are in the frontend itself
+
+# Second Task, analysis
+
+In the file https://github.com/muffin-man1978/hoplasoftware-tech-test/blob/master/Question2.js you can find the code, commented where appropiate,
+and refactored after the comments.
