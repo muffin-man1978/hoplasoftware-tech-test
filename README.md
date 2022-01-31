@@ -19,7 +19,7 @@ To test (uses jest)
 
 # Frontend application
 
-Runs in port 8001
+Runs in port 8081
 Coded in ES6 for showcase puropses
 
 To run:
