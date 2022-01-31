@@ -19,12 +19,12 @@ To test (uses jest)
 
 # Frontend application
 
-Runs in port 8081
+Runs in port 8081.
 Coded in ES6 for showcase puropses
 
 To run:
 
-- cd frontend
+- cd vue-js-frontend
 - npm install
 - npm run serve  (This will use vue-cli-service to serve with hot reload)
 
