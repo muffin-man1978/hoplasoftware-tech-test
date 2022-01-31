@@ -1,0 +1,11 @@
+{
+  "name": "fullstack-tech-test",
+  "version": "1.0.0",
+  "description": "The monorepo for the Fullstack Hoplasoftware test",  
+  "scripts": {    
+    "serve": "cd backend && npm run dev && cd vue-js-frontend && npm run serve",
+    "install": "cd backend && npm install && cd vue-js-frontend && npm install"
+  },
+  "author": "Alejandro Almunia Herranz",
+  "license": "ISC"
+}
