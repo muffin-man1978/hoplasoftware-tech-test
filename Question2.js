@@ -119,7 +119,7 @@ exports.inviteUser = async function (req, res) {
                 new: true
             });
         } catch (e) {
-            mongooseError(e);
+            mongooseError(res, e);
         }
 
         try {
@@ -132,7 +132,7 @@ exports.inviteUser = async function (req, res) {
             }            
             await shop.save();
         } catch (e) {
-            mongooseError(e);
+            mongooseError(res, e);
         }
         
     } else if (invitationResponse.status === 200) {
@@ -141,5 +141,5 @@ exports.inviteUser = async function (req, res) {
             message: 'User already invited to this shop'
         });
     }
-    res.json(invitationResponse);
+    res.status(200).json(invitationResponse);
 };
