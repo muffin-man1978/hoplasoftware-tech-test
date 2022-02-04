@@ -8,8 +8,7 @@
     "clean": "rimraf ./dist",
     "start": "node ./dist/src/index.js",
     "compile_run": "npm run clean && npx tsc && node ./dist/src/index.js",
-    "test": "jest",
-    "test:ci": "jest --watchAll=false --coverage",
+    "test": "jest --verbose",
     "build": "npx tsc"
   },
   "devDependencies": {
@@ -25,6 +24,7 @@
     "@types/cors": "^2.8.12",
     "@types/superagent": "^4.1.14",
     "cors": "^2.8.5",
+    "dotenv": "^16.0.0",
     "express": "^4.17.1",
     "rimraf": "^3.0.2",
     "superagent": "^7.1.1"
@@ -38,6 +38,9 @@
       "ts",
       "tsx",
       "js"
+    ],
+    "setupFiles": [
+      "dotenv/config"
     ]
   },
   "author": "",
