@@ -1,6 +1,7 @@
 import AlbumRepository from "../repository/album.repository";
 import AlbumService from "../service/album.service";
 import { Router, Request, Response } from 'express';
+import applicationConfig from "../../application.config";
 
 const router = Router();
 
@@ -14,7 +15,7 @@ router.get('/artist', (req:Request<{}, {}, {}, artistName>, res:Response) => (as
     if(artistName.length === 0) {
         return res.status(204);
     }
-    
+
     const repo = new AlbumRepository();
     const service = new AlbumService();
 

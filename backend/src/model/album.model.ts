@@ -1,6 +1,9 @@
 // We don't really know wheter ITunes will ALWAYS return EVERY SINGLE field, therefore, we make them optional for now
 // More knowledge of the API would be required, but for the POC this is good enough
-export default interface Album {
+
+import { Document } from "mongoose";
+
+export default interface Album extends Document {
     wrapperType?: string,
     collectionType?: string,
     artistId?: number,

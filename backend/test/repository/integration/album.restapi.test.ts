@@ -13,6 +13,7 @@ describe('AlbumRESTAPI integration test suite', () => {
     const repo = new AlbumRESTAPI();
 
     beforeEach(() => {
+        dotenv.config();
         endpointsConfig.itunes.urlArtist = "https://itunes.apple.com/search?term=[ARTIST_NAME]&entity=album&attribute=composerTerm";
     });
 

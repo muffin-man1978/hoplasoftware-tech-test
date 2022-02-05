@@ -1,13 +1,13 @@
 import Album from "../model/album.model";
-import AlbumRESTAPI from "./album.restapi";
-import AlbumMongoDB from "./album.mongodb";
+import AlbumDataOriginFactory from "./album.dataorigin.factory";
+import applicationConfig from "../../application.config";
 
 export default class AlbumRepository {
     
-    private _dataOrigin: AlbumRESTAPI | AlbumMongoDB;
+    private _dataOrigin;
 
-    public constructor(dataOriginREST : boolean = true) {
-        this._dataOrigin = (dataOriginREST) ? new AlbumRESTAPI() : new AlbumMongoDB();
+    public constructor() {        
+        this._dataOrigin = AlbumDataOriginFactory.getDataOrigin(applicationConfig.dataOrigin);
     }
 
     public async getByArtist(artistName: string) : Promise<Album[]> {        

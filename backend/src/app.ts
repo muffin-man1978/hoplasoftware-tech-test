@@ -10,12 +10,12 @@ class Application {
   server: Server;
 
   constructor() {
-    this.app = express();    
+    this.app = express();
     this.middlewares();
     this.routes();
     this.server = this.start();
   }
-  
+
   middlewares(): void {
     if (applicationConfig.dev) {
       this.app.use(function (req, res, next) {
@@ -36,7 +36,7 @@ class Application {
   start(): Server {
     return this.app.listen(applicationConfig.port, () => {
       if (applicationConfig.dev) {
-        console.log('Server is running on port ' + this.app.get('port'));
+        console.log('Server is running on port ' + applicationConfig.port);
       }
     });
   }
@@ -44,6 +44,19 @@ class Application {
   teardown(): void {
     this.server.close();
   }
+
+  /* start(): void {
+    this.app.listen(applicationConfig.port, () => {
+      if (applicationConfig.dev) {
+        console.log('Server is running on port ' + applicationConfig.port);
+      }
+    });
+  }
+
+  close() : void {
+    // this.app.
+  } */
+
 }
 
 export default Application;

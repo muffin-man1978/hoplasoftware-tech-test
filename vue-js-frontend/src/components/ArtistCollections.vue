@@ -71,7 +71,7 @@ export default {
   methods: {
     getArtistRecords() {
       this.artistName = this.artistName === "" ? "coltrane" : this.artistName; // Coltrane is the best :-D
-      const url = "http://localhost:8000/artist_albums/" + this.artistName;
+      const url = "http://localhost:8000/artist/?name=" + this.artistName;
       fetch(url).then((response) => {
         response.json().then((data_r) => {
           this.musicRecords = data_r; // We keep the ones we requested from the API

@@ -6,30 +6,35 @@ import applicationConfig from '../../application.config';
 import * as superAgent from "superagent";
 
 describe('Application unit test suite', () => {
-    
+
     beforeEach(() => {
         dotenv.config();
         applicationConfig.dev = false;
         applicationConfig.port = 5556;
+        applicationConfig.isREST = true;
         endpointsConfig.itunes.urlArtist = "https://itunes.apple.com/search?term=[ARTIST_NAME]&entity=album&attribute=composerTerm";
     });
-
+    
     it('Fails with wrong environment variables', async () => {
         endpointsConfig.itunes.urlArtist = "WRONG_URL";        
         const myApp = new Application();
+
         try {
-            const response = await superAgent.get(`http://localhost:${applicationConfig.port}/artist/?name=mattersnotitwillfail`);            
+            const response = await superAgent.get(`http://localhost:${applicationConfig.port}/artist/?name=mattersnotitwillfail`);     
+            console.log(response);
         } catch (e) {
             expect(e).toBeDefined();
         }
+
         myApp.teardown();
+
     });
 
     it('Works with the correct environment variable', async () => {
         const myApp = new Application();        
         const response = await superAgent.get(`http://localhost:${applicationConfig.port}/artist/?name=thiswillwork`);        
-        expect(response).toBeDefined();        
-        myApp.teardown();
+        expect(response).toBeDefined();         
+        myApp.teardown();       
     });
 
 
