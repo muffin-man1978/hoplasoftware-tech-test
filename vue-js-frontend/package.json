@@ -24,6 +24,7 @@
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^7.0.0",
     "typescript": "~3.9.3",
+    "vue-cli-plugin-vuetify": "~2.4.5",
     "vue-jest": "^5.0.0-0"
   }
 }
