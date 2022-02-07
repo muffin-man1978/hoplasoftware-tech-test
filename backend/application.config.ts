@@ -4,5 +4,5 @@ export default {
     port: 8000,
     dev: true,
     isREST: false,
-    dataOrigin: <albumDataOriginsKeys>"rest"
+    dataOrigin: <albumDataOriginsKeys>"mongo"
 }

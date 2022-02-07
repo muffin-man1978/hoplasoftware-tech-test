@@ -3,16 +3,22 @@ import BaseRoutes from '../src/controller/base.controller';
 import AlbumRoutes from '../src/controller/album.controller';
 import applicationConfig from '../application.config';
 import { Server } from "http";
+import MongoDBConnection from './mongodb.connection';
 
 class Application {
 
   app: express.Application;
   server: Server;
+  mongo?: MongoDBConnection;
+  // @todo: Insertar objeto de MongoDB Connection aqui
 
-  constructor() {
+  constructor(mongo_handle?:MongoDBConnection) {
     this.app = express();
     this.middlewares();
     this.routes();
+    if(mongo_handle) {
+      this.mongo = mongo_handle;    
+    }
     this.server = this.start();
   }
 
@@ -41,8 +47,12 @@ class Application {
     });
   }
 
+  // Aqui nos tenemos que cargar el objeto de MongoDB
   teardown(): void {
-    this.server.close();
+    if(this.mongo) {
+      this.mongo.close();
+    }
+    this.server.close();    
   }
 
   /* start(): void {

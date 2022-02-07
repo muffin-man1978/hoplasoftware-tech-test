@@ -6,8 +6,11 @@ import MongoDBConnection from './mongodb.connection';
 
 dotenv.config();
 
-if(!applicationConfig.isREST) {
-    const myMongo = MongoDBConnection.getInstance();
-}
+let myApp: Application;
 
-const myApp = new Application();
+if(applicationConfig.dataOrigin === "mongo") {
+    const myMongoDB = new MongoDBConnection();
+    myApp = new Application(myMongoDB);
+} else {
+    myApp = new Application();
+}
