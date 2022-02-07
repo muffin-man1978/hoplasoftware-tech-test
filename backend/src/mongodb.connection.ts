@@ -1,8 +1,7 @@
 import mongoose from "mongoose";
-import { connection } from "mongoose";
 import mongodbConfig from "../mongodb.config";
 
-// Singleton connection pattern
+// Singleton
 export default class MongoDBConnection {
 
     private static instance: MongoDBConnection;

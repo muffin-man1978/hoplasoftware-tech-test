@@ -22,6 +22,6 @@ export default interface Album extends Document {
     copyright?: string,
     country?: string,
     currency?: string,
-    releaseDate?: Date,
+    releaseDate?: string,
     primaryGenreName?: string    
 }
