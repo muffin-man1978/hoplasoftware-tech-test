@@ -10,8 +10,7 @@ describe('Application unit test suite', () => {
     beforeEach(() => {
         dotenv.config();
         applicationConfig.dev = false;
-        applicationConfig.port = 5556;
-        
+        applicationConfig.port = 5556;        
     });
 
     it('Fails with wrong environment variables', async () => {

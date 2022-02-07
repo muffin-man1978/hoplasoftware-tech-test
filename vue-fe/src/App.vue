@@ -4,10 +4,11 @@
     <v-main>
       <v-container>
         <v-text-field
+          id="artistNameText"
           v-model="artistName"
           label="Request results from backend"
         ></v-text-field>
-        <v-btn @click="getDataFromService()">Search</v-btn>
+        <v-btn @click="getDataFromService()" id="btnSearchBackend">Search</v-btn>
         <v-data-table
           :headers="headers"
           :items="albums"
@@ -39,7 +40,7 @@
 import AlbumService from '../src/services/album.service';
 
 export default {
-  name: "App",
+  name: "MainApp",
   data: () => ({
     artistName: "",
     albumSearch: "",
