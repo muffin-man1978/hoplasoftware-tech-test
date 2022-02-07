@@ -5,6 +5,17 @@
 Runs in port 8000.
 Coded in TS for showcase purposes.
 
+Contains an agnostic data origin factory, described in:
+
+/src/model/album.dataorigin.ts
+/src/model/album.dataorigin.types.ts
+
+and configured in application.config.ts
+
+It has a connection string for a public Atlas MongoDB cluster in the file mongodb.config.ts
+The MongoDB database does not have the list of albums, therefore, search by string is not done, it is there
+for showcasing purposes of the factory for the origin of data.
+
 To run:
 
 - cd backend
@@ -43,3 +54,7 @@ To test:
 
 In the file https://github.com/muffin-man1978/hoplasoftware-tech-test/blob/master/Question2.js you can find the code, commented where appropiate,
 and refactored after the comments.
+
+# TODO
+
+More testing
