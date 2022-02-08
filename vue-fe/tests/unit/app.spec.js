@@ -53,7 +53,7 @@ describe('MainApp test', () => {
     beforeAll(() => {
         global.fetch = () =>
             Promise.resolve({
-                json: () => Promise.resolve(testDataStructure),
+                json: () => Promise.resolve(mockData),
             })
     });    
     afterAll(() => {
