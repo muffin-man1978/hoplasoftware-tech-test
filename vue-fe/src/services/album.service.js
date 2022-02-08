@@ -1,8 +1,6 @@
-const host_services = "http://localhost:8000";
 export default {
     async getAlbumsByName(artistName) {
-        const url = `${host_services}/artist/?name=${artistName}`;
-        console.log(url);
+        const url = `${process.env.VUE_APP_URL_BACKEND}/artist/?name=${artistName}`;        
         const response = await fetch(url);
         const data_r = await response.json();
         return data_r;

@@ -30,12 +30,19 @@ export default {
     areThereAny() {
         if (sessionStorage) {
             const existing = JSON.parse(sessionStorage.getItem('techTest.favorites'));
-            return (existing !== null) 
-            ? (existing.length > 0) 
-            ? true : false 
-            : false;
+            return (existing !== null) ? (existing.length > 0 ? true : false) : false;
         } else {
             return false;
+        }
+    },
+    totalFavorites() {
+        if(sessionStorage) {
+            if(this.areThereAny()) {
+                const existing = JSON.parse(sessionStorage.getItem('techTest.favorites'));
+                return existing.length;
+            } else {
+                return 0;
+            }
         }
     }
 }

@@ -103,11 +103,11 @@ export default {
     },
     addNewFavorite(album) {
       FavoriteService.addNewFavorite(album);
-      this.favoritesTotal++;
+      this.favoritesTotal = FavoriteService.totalFavorites();
     },
     removeFavorite(album) {
       FavoriteService.removeFavorite(album);
-      this.favoritesTotal--;      
+      this.favoritesTotal = FavoriteService.totalFavorites();
       if(this.favoritesLoaded) {
         this.loadFavorites();
       }
