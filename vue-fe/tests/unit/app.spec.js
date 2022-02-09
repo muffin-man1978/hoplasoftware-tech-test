@@ -1,9 +1,8 @@
 import { shallowMount, mount, createLocalVue } from '@vue/test-utils'
 import MainApp from '../../src/App.vue';
-import Vue from 'vue';
 import Vuetify from 'vuetify'
-
-// Vue.use(Vuetify);
+import VueI18n from 'vue-i18n'
+import translations from '../../src/locales/en.json';
 
 describe('MainApp test', () => {
 
@@ -64,17 +63,26 @@ describe('MainApp test', () => {
         global.fetch = unmockedFetch
     });
 
-    // Vuetify init
+    // Vuetify + i18n init
+    //@todo: Jest returns warnings for the translations...
     let localVue;
     let vuetify;
     let wrapper;
+    let i18n;
     beforeEach(() => {
         localVue = createLocalVue();
         vuetify = new Vuetify();
         localVue.use(vuetify);
+        i18n = new VueI18n({
+            locale: 'en',
+            fallbackLocale: 'en',
+            messages: translations            
+        });
+        localVue.use(i18n);
         wrapper = mount(MainApp, {
             localVue,
             vuetify,
+            i18n,
             mocks: {
                 $t: () => { }
             }
@@ -112,8 +120,7 @@ describe('MainApp test', () => {
     it('Should not render any favorites', () => {
         expect(wrapper.find("#favorite_1443203607").exists()).toEqual(false);
     });
-
-    // Passes with a warning from jest, look further into it
+    
     it('Should render favorites', async () => {
         wrapper.setData({
             favoritesLoaded: true,

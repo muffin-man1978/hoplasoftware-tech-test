@@ -1,6 +1,15 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>{{ $t("barTitle") }}</v-app-bar>
+    <v-app-bar app color="primary" dark>
+      <div>
+      {{ $t("TITLE_BAR") }}
+      </div>
+      <div>
+        <v-btn>
+          <v-icon></v-icon>
+        </v-btn>
+      </div>
+    </v-app-bar>
     <v-main>
       <v-container>
         <v-text-field
@@ -58,6 +67,8 @@ import AlbumService from "../src/services/album.service";
 import FavoriteService from "../src/services/favorite.service";
 import Favorite from "../src/components/Favorite.vue";
 
+import i18n from './i18n';
+
 export default {
   name: "MainApp",
   components: {
@@ -72,22 +83,22 @@ export default {
         value: "artworkUrl100",
       },
       {
-        text: "Album name",
+        text: i18n.t("ALBUM_TITLE"),
         value: "collectionName",
         sortable: true,
       },
       {
-        text: "Artist name",
+        text: i18n.t("ARTIST_NAME"),
         value: "artistName",
         sortable: true,
       },
       {
-        text: "Release Year",
+        text: i18n.t("RELEASE_YEAR"),
         sortable: true,
         value: "releaseDate",
       },
       {
-        text: "FAVORITE",
+        text: i18n.t("FAVORITE"),
         value: "collectionId",
       },
     ],

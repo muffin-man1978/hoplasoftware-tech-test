@@ -1,4 +1,7 @@
-{
-  "message": "hello i18n !!",
-  "barTitle": "Technical test"
+{  
+  "TITLE_BAR": "Technical test",  
+  "ALBUM_TITLE": "Album Title",
+  "ARTIST_NAME": "Artist Name",
+  "RELEASE_YEAR": "Release Year",
+  "FAVORITE": "Favorite"  
 }
