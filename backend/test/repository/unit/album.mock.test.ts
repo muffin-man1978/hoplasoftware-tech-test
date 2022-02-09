@@ -1,5 +1,5 @@
 import 'jest';
-import AlbumMockData from '../../../src/repository/album.mock';
+import AlbumMockData from '../../../src/repository/origins/album.mock';
 
 describe('AlbumMock unit test suite', () => {
 

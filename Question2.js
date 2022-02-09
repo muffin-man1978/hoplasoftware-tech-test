@@ -59,6 +59,8 @@ exports.inviteUser = function (req, res) {
                 });                
                 return;
             }
+
+            // This code is not reachable
             res.json(invitationResponse);
         });
 };

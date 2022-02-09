@@ -1,11 +1,12 @@
 import 'jest';
 import Application from '../../src/app';
 import * as dotenv from 'dotenv';
-import endpointsConfig from '../../endpoints.config';
 import applicationConfig from '../../application.config';
 import * as superAgent from "superagent";
-import MongoDBConnection from '../../src/mongodb.connection';
-import mongoose from "mongoose";
+
+// SEE LAST TEST
+// import MongoDBConnection from '../../src/mongodb.connection';
+// import mongoose from "mongoose";
 
 describe('Application integration test suite', () => {
     
@@ -13,7 +14,7 @@ describe('Application integration test suite', () => {
         dotenv.config();
         applicationConfig.dev = false;
         applicationConfig.port = 5556;  
-        endpointsConfig.itunes.urlArtist = "https://itunes.apple.com/search?term=[ARTIST_NAME]&entity=album&attribute=composerTerm";      
+        applicationConfig.endpoints.itunes.urlArtist = "https://itunes.apple.com/search?term=[ARTIST_NAME]&entity=album&attribute=composerTerm";      
     });
 
     it('Works with the REST API origin', async () => {

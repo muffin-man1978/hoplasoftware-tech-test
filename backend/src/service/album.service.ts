@@ -1,7 +1,8 @@
 import Album from "../model/album.model";
 
+// Album model manipulation
 export default class AlbumService {
-
+    
     public getUnique(albums:Album[]) : Album[] {
         let res = <Album[]>[];
         let uniq = new Map();

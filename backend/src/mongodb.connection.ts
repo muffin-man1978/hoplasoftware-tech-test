@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import mongodbConfig from "../mongodb.config";
+import applicationConfig from "../application.config";
 
 // Singleton
 export default class MongoDBConnection {
@@ -9,7 +9,7 @@ export default class MongoDBConnection {
 
     public constructor() {   
         try {     
-            mongoose.connect(mongodbConfig.connectionString).then((conn) => {
+            mongoose.connect(applicationConfig.mongoDB.connectionString).then((conn) => {
                 this._connection = conn;
             });
         } catch (e) {

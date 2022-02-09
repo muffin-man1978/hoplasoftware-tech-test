@@ -2,6 +2,7 @@ import Album from "../model/album.model";
 import AlbumDataOriginFactory from "./album.dataorigin.factory";
 import applicationConfig from "../../application.config";
 
+// Get the data
 export default class AlbumRepository {
     
     private _dataOrigin;

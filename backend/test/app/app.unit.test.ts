@@ -1,7 +1,6 @@
 import 'jest';
 import Application from '../../src/app';
 import * as dotenv from 'dotenv';
-import endpointsConfig from '../../endpoints.config';
 import applicationConfig from '../../application.config';
 import * as superAgent from "superagent";
 
@@ -14,7 +13,7 @@ describe('Application unit test suite', () => {
     });
 
     it('Fails with wrong environment variables', async () => {
-        endpointsConfig.itunes.urlArtist = "WRONG_URL";
+        applicationConfig.endpoints.itunes.urlArtist = "WRONG_URL";
         const myApp = new Application();
 
         try {

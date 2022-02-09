@@ -9,8 +9,7 @@ class Application {
 
   app: express.Application;
   server: Server;
-  mongo?: MongoDBConnection;
-  // @todo: Insertar objeto de MongoDB Connection aqui
+  mongo?: MongoDBConnection;  
 
   constructor(mongo_handle?:MongoDBConnection) {
     this.app = express();
@@ -47,26 +46,12 @@ class Application {
     });
   }
 
-  // Aqui nos tenemos que cargar el objeto de MongoDB
   teardown(): void {
     if(this.mongo) {
       this.mongo.close();
     }
     this.server.close();    
   }
-
-  /* start(): void {
-    this.app.listen(applicationConfig.port, () => {
-      if (applicationConfig.dev) {
-        console.log('Server is running on port ' + applicationConfig.port);
-      }
-    });
-  }
-
-  close() : void {
-    // this.app.
-  } */
-
 }
 
 export default Application;

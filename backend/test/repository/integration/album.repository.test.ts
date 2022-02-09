@@ -22,7 +22,7 @@ describe('AlbumRepository integration tests', () => {
         }
     });
 
-    /* it('Connects correctly to MongoDB, retrieves all data from DB', () => {
+    it('Connects correctly to MongoDB, retrieves all data from DB', () => {
         applicationConfig.dataOrigin = <albumDataOriginsKeys>"mongo";
         const repo = new AlbumRepository();
         try {
@@ -31,7 +31,7 @@ describe('AlbumRepository integration tests', () => {
         } catch (e) {
             // Not here
         }
-    }); */
+    });
 
     it('Uses correctly the mock data object', () => {
         applicationConfig.dataOrigin = <albumDataOriginsKeys>"mock";

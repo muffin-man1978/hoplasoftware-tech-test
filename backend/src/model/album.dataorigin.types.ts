@@ -1,6 +1,6 @@
-import AlbumRESTAPI from "../repository/album.restapi";
-import AlbumMongoDB from "../repository/album.mongodb";
-import AlbumMockData from "../repository/album.mock";
+import AlbumRESTAPI from "../repository/origins/album.restapi";
+import AlbumMongoDB from "../repository/origins/album.mongodb";
+import AlbumMockData from "../repository/origins/album.mock";
 
 // Here we add types for the factory
 export const albumDataOriginsMap = {

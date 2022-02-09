@@ -1,7 +1,6 @@
 import AlbumRepository from "../repository/album.repository";
 import AlbumService from "../service/album.service";
 import { Router, Request, Response } from 'express';
-import applicationConfig from "../../application.config";
 
 const router = Router();
 

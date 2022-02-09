@@ -1,5 +1,5 @@
-import AlbumDataOrigin from "../model/album.dataorigin";
-import Album from "../model/album.model";
+import AlbumDataOrigin from "../../model/album.dataorigin";
+import Album from "../../model/album.model";
 
 const mockDataAlbums = <Album[]>[
     {
