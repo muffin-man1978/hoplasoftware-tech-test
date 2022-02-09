@@ -1,9 +1,19 @@
 <template>
-  <div>
-    <v-btn icon color="blue" @click="makeFavorite()">
+  <div v-bind:id="'favorite_' + this.collectionId">
+    <v-btn
+      v-bind:id="'add_favorite_' + this.collectionId"
+      icon
+      color="blue"
+      @click="makeFavorite()"
+    >
       <v-icon>mdi-star</v-icon>
     </v-btn>
-    <v-btn icon color="red" @click="removeFavorite()">
+    <v-btn
+      v-bind:id="'remove_favorite_' + this.collectionId"
+      icon
+      color="red"
+      @click="removeFavorite()"
+    >
       <v-icon>mdi-delete</v-icon>
     </v-btn>
   </div>
